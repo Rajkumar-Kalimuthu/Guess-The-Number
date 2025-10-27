@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+    <!-- <script src="/Guess/code.js"></script> -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Special+Elite&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="six">
+        <h1>Guess The Number 1 To 10</h1>
+        <input type="number" id="one"><br>
+        <button onclick="verson()">Click</button>
+        <p id="chick">Score is :</p>
+        <p id="two">Score:10</p>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    var print = document.getElementById("one");
+    var para = document.getElementById("chick");
+    var rannum = Math.floor(Math.random() * 10) + 1;
+    var score = document.getElementById("two");
+    var winner = 10
+
+    function verson() {
+        var batta = print.value
+
+        if (rannum == batta) {
+            // console.log("Right"
+            alert("You Win");
+            para.textContent = "Right guess!"
+            score.textContent = "Score:10"
+
+        }
+        else {
+            winner = winner - 1
+            score.textContent = "Score:" + winner
+            para.textContent = "wrong ";
+
+        }
+        if (winner == 0) {
+            alert("TRY AGAIN" + rannum);
+        }
+    }
+</script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: black;
+        font-family: poppins;
+
+    }
+
+    .six {
+        background-color: rgb(201, 196, 255);
+        height: 350px;
+        width: 550px;
+        /* border: 2px solid black; */
+        position: relative;
+        left: 500px;
+        top: 150px;
+        border-radius: 30px;
+        /* display: flex; */
+        box-shadow: 0 0 10px rgb(255, 255, 255);
+        cursor: pointer;
+        transform: scale(1.0);
+        /* transition: 1.5s; */
+        box-shadow: 5px 5px 15px rgba(237, 6, 40, 0.847);
+
+    }
+
+    .six input {
+        margin-left: 120px;
+        margin-top: 80px;
+        width: 300px;
+        height: 40px;
+        border-radius: 30px;
+        border: none;
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+        box-shadow: 0 0 10px rgba(167, 83, 4, 0.711);
+        padding: 3px;
+        font-size: large;
+        position: relative;
+
+
+
+
+    }
+
+    .six input:hover {
+        transform: scale(1.05);
+        transition: o.5s;
+    }
+
+    h1 {
+
+        position: relative;
+        top: 25px;
+        text-align: center;
+        /* margin-left: 100px; */
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+        text-shadow:5px 5px 15px rgba(237, 6, 40, 0.847) ;
+
+    }
+
+    .six button {
+        margin-left: 120px;
+        margin-top: 20px;
+        width: 300px;
+        height: 40px;
+        border-radius: 30px;
+        border: none;
+        box-shadow: 0 0 10px rgba(167, 83, 4, 0.711);
+        background-color: rgb(27, 114, 154);
+        /* opacity: 10px; */
+        color: white;
+        font-weight: 200;
+        position: relative;
+
+    }
+
+    #chick {
+        margin-left: 120px;
+        top: 60px;
+        font-size: 20px;
+        font-weight: 500;
+        background-color: rgb(218, 149, 137);
+        border-radius: 15px;
+        display: inline;
+        padding: 10px;
+        position: relative;
+        box-shadow: 0 0 10px rgba(167, 83, 4, 0.711);
+
+    }
+
+    #two {
+        margin-left: 120px;
+        top: 60px;
+        font-size: 20px;
+        font-weight: 500;
+        background-color: rgb(218, 149, 137);
+        border-radius: 15px;
+        display: inline;
+        padding: 10px;
+        position: relative;
+        box-shadow: 0 0 10px rgba(167, 83, 4, 0.711);
+
+    }
+    
+</style>
